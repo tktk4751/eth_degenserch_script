@@ -1,0 +1,30 @@
+# 必要なライブラリをインポートします
+from web3 import Web3
+import csv
+from concurrent.futures import ThreadPoolExecutor
+
+# Infura APIキーを設定（自分のものに置き換える）
+infura_url = "https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042"
+
+# Web3オブジェクトを作成
+web3 = Web3(Web3.HTTPProvider(infura_url))
+
+# CSVファイルからトランザクションハッシュを読み込む
+with open("./input/tx_hashes.csv", "r") as file:
+    reader = csv.reader(file)
+    tx_hashes = [row[0] for row in reader]  # 各行からトランザクションハッシュを読み込む
+
+
+# トランザクションハッシュからトランザクションオブジェクトを取得し、実行者のウォレットアドレスを取得
+def get_sender(tx_hash):
+    tx = web3.eth.get_transaction(tx_hash)  # トランザクションオブジェクトを取得
+    return tx["from"]  # 実行者のウォレットアドレスを取得
+
+
+# ThreadPoolExecutorを作成し、すべてのトランザクションハッシュに対して非同期にget_senderを実行
+with ThreadPoolExecutor() as executor:
+    sender_addresses = list(executor.map(get_sender, tx_hashes))
+
+# senderアドレスをCSVファイルに書き込む
+with open("ETH_sender_addresses.csv", "w") as file:
+    file.writelines("\n".join(sender_addresses))
