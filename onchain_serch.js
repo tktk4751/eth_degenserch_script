@@ -6,7 +6,7 @@ const { CoinGecko } = require('coingecko-api'); // ETH/USDレート取得用
 const { ethers } = require('ethers'); // Ethereum操作用
 
 // Infura APIキーを設定
-const infuraApiKey = 'https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042';
+const infuraApiKey = 'YOUR_API_KEY';
 
 // Providerオブジェクトを作成
 const provider = new ethers.providers.InfuraProvider('homestead', infuraApiKey);
