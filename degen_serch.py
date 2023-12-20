@@ -7,10 +7,7 @@ import datetime
 from ens import ENS
 
 # Infura APIキーを設定（自分のものに置き換える）
-provider = "https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042"
-# infura_url = "https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042"
-# Alchemy = "https://eth-mainnet.g.alchemy.com/v2/XwXZbko-cznfVHS7LJ8RY4ni7ZNq84Lv"
-# quicknode_url = "https://hardworking-convincing-morning.discover.quiknode.pro/b54523cc1be0295dd1869b2779084f041fbf9755/"
+provider = "YOUR_API_KEY"
 
 # Web3オブジェクトを作成
 web3 = Web3(Web3.HTTPProvider(provider))
