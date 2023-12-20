@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor
 import csv
 from datetime import datetime
 
-INFURA_URL = "https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042"
+INFURA_URL = "YOUR_API_KEY"
 TOKEN_ADDRESS = "0x25127685dc35d4dc96c7feac7370749d004c5040"
 START_DATE = "2023-05-25"
 END_DATE = "2023-05-28"
