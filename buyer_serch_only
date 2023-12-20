@@ -4,7 +4,7 @@ import csv
 from concurrent.futures import ThreadPoolExecutor
 
 # Infura APIキーを設定（自分のものに置き換える）
-infura_url = "Y"
+infura_url = "YOUR_API_KEY"
 
 # Web3オブジェクトを作成
 web3 = Web3(Web3.HTTPProvider(infura_url))
