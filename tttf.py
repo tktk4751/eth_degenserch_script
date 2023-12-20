@@ -9,7 +9,7 @@ from decimal import Decimal
 from web3.exceptions import TransactionNotFound
 
 # Infura APIキーを設定
-infura_url = "https://mainnet.infura.io/v3/9c09fc0297de455dafb8a31432571042"
+infura_url = "YOUR_AIP_KEY"
 
 # Web3オブジェクトを作成
 web3 = Web3(Web3.HTTPProvider(infura_url))
